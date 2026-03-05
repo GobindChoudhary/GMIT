@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="1584" height="1584" viewBox="0 0 1584 1584">
+<defs>
+<clipPath id="clip_1">
+<path transform="matrix(1,0,0,-1,0,1584)" d="M0 1584H1584V0H0Z"/>
+</clipPath>
+<clipPath id="clip_2">
+<path transform="matrix(1,0,0,-1,0,1584)" d="M0 1584H1584V0H0Z"/>
+</clipPath>
+</defs>
+<path transform="matrix(1,0,0,-1,0,1584)" d="M0 0H1584V1584H0Z" fill="#003462"/>
+<path transform="matrix(1,0,0,-1,0,1584)" d="M1388.634 671.766H836.468V1031.766H1388.634Z" fill="#0097dc"/>
+<path transform="matrix(1,0,0,-1,1208.0083,576.681)" d="M0 0 5.668-10.352 17.409-11.552 9.315-20.142 11.802-31.679 1.132-26.635-9.072-32.566-7.573-20.859-16.366-12.987-4.769-10.796Z" fill="#fcb827"/>
+<g clip-path="url(#clip_1)">
+<path transform="matrix(1,0,0,-1,1221.7731,851.2354)" d="M0 0C0 0-73.772 67.171-13.564 240.751-17.347 199.788-13.685 154.909 5.458 126.506 35.555 170.961 94.761 178.694 127.172 175.342 69.607 155.957 13.648 100.481 0 0" fill="#ffffff"/>
+<path transform="matrix(1,0,0,-1,1255.3505,672.6599)" d="M0 0C-.429-8.502-7.669-15.046-16.171-14.616-24.673-14.187-31.216-6.947-30.787 1.555-30.358 10.056-23.118 16.6-14.616 16.171-6.115 15.742 .429 8.502 0 0" fill="#fcb827"/>
+<path transform="matrix(1,0,0,-1,0,1584)" d="M836.468 1031.766H214.53504V671.766H836.468ZM833.468 674.766H217.53504V1028.766H833.468Z" fill="#0097dc"/>
+<path transform="matrix(1,0,0,-1,485.6502,687.6428)" d="M0 0H-62.675C-71.297 15.927-87.215 24.399-108.438 24.399-144.916 24.399-169.124-2.034-169.124-43.377-169.124-87.433-144.584-113.188-103.796-113.188-75.608-113.188-56.043-97.938-47.421-71.166H-119.382V-28.467H3.979V-82.349C-7.959-123.354-46.758-164.358-108.107-164.358-177.746-164.358-226.825-114.543-226.825-43.377-226.825 27.788-178.077 77.942-108.438 77.942-52.727 77.942-12.27 48.799 0 0" fill="#ffffff"/>
+<path transform="matrix(1,0,0,-1,518.8215,612.4114)" d="M0 0H66.986L132.314-164.697 196.979 0H263.634V-237.896H206.928V-95.226L154.864-237.896H109.101L56.706-94.887V-237.896H0Z" fill="#ffffff"/>
+<path transform="matrix(1,0,0,-1,0,1584)" d="M885.637 971.589H943.586V733.693H885.637Z" fill="#ffffff"/>
+<path transform="matrix(1,0,0,-1,972.7303,612.4114)" d="M0 0H184.013V-46.427H120.981V-237.896H63.032V-46.427H0Z" fill="#ffffff"/>
+<path transform="matrix(1,0,0,-1,1388.6337,1005.7013)" stroke-width="3" stroke-linecap="butt" stroke-miterlimit="10" stroke-linejoin="miter" fill="none" stroke="#0097dc" d="M0 0H-1174.099"/>
+</g>
+<text fill="#ffffff" xml:space="preserve" transform="matrix(1 0 -0 1 0 1584)" font-size="60.9076" font-family="SRAJJI+Karla-Bold" font-weight="bold"><tspan y="-604.8936" x="595.6462 632.19076 663.49728 702.78268 742.5553 779.46536 833.91677 870.8268 915.7157 949.27578 247.07199 280.63209 321.01383 360.29924 380.0333 424.92219 444.65626 489.54518 1054.8286 1091.3732 1131.7549 1174.512 1202.7122 1239.6222 1279.3949 1312.955">PLACEMENTSTRAININGPROJECTS</tspan></text>
+<g clip-path="url(#clip_2)">
+<path transform="matrix(1,0,0,-1,0,1584)" d="M566.646 657.153H557.099V597.205H566.646Z" fill="#ffffff"/>
+<path transform="matrix(1,0,0,-1,0,1584)" d="M1027.755 657.153H1018.208V597.205H1027.755Z" fill="#ffffff"/>
+</g>
+<text fill="#ffffff" xml:space="preserve" transform="matrix(1 0 -0 1 0 1584)" font-size="21" font-family="SZYEJI+Karla-Medium"><tspan y="-979.3564" x="1323.4038 1334.5968">TM</tspan></text>
+</svg>
