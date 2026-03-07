@@ -11,7 +11,7 @@ const defaultCourse = {
   title: "Data Science & Analytics with Gen AI",
   description:
     "Gain hands-on experience in data analysis, visualization, and AI integration.",
-  hours: "115+",
+  months: "115+",
   certified: "Yes",
   mentorSupport: "24/7",
   price: "6999",
@@ -32,7 +32,7 @@ const courseExtras = {
       "Building end-to-end ML pipelines",
     ],
     includes: [
-      { icon: "ri-play-circle-line", text: "115+ hours on-demand video" },
+      { icon: "ri-play-circle-line", text: "115+ months on-demand video" },
       { icon: "ri-download-line", text: "45 downloadable resources" },
       { icon: "ri-global-line", text: "Access on website & app" },
       { icon: "ri-medal-line", text: "Certificate of completion" },
@@ -56,7 +56,7 @@ const courseExtras = {
       "Building complete full-stack projects",
     ],
     includes: [
-      { icon: "ri-play-circle-line", text: "120+ hours on-demand video" },
+      { icon: "ri-play-circle-line", text: "120+ months on-demand video" },
       { icon: "ri-download-line", text: "50 downloadable resources" },
       { icon: "ri-global-line", text: "Access on website & app" },
       { icon: "ri-medal-line", text: "Certificate of completion" },
@@ -81,7 +81,7 @@ const defaultExtras = {
     "Portfolio-ready capstone project",
   ],
   includes: [
-    { icon: "ri-play-circle-line", text: "100+ hours on-demand video" },
+    { icon: "ri-play-circle-line", text: "100+ months on-demand video" },
     { icon: "ri-download-line", text: "30+ downloadable resources" },
     { icon: "ri-global-line", text: "Access on website & app" },
     { icon: "ri-medal-line", text: "Certificate of completion" },
@@ -127,9 +127,9 @@ export const courseDetail = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                {course.hours && (
+                {course.months && (
                   <span className="inline-block bg-brand-accent/15 text-brand-accent text-xs font-bold tracking-wider uppercase px-4 py-1.5 rounded-full mb-5">
-                    {course.hours} Hours of Content
+                    {course.months} months of Content
                   </span>
                 )}
 
@@ -172,7 +172,7 @@ export const courseDetail = () => {
                 {/* Floating stats */}
                 <div className="absolute -bottom-6 left-6 right-6 bg-white rounded-xl shadow-lg p-4 grid grid-cols-3 gap-4">
                   {[
-                    { icon: "ri-time-line", val: course.hours, lbl: "Hours" },
+                    { icon: "ri-time-line", val: course.months, lbl: "months" },
                     {
                       icon: "ri-award-line",
                       val: course.certified,

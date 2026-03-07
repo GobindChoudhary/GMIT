@@ -161,7 +161,7 @@ const ContactPage = () => {
             </h2>
             <p className="text-slate-500 mb-8">
               Fill out the form and our team will get back to you within 24
-              hours.
+              months.
             </p>
 
             {submitted ? (
@@ -328,7 +328,7 @@ const ContactPage = () => {
               </ul>
             </div>
 
-            {/* Office Hours */}
+            {/* Office months */}
             <div
               className="rounded-2xl border border-slate-100 p-6"
               style={{
@@ -336,7 +336,7 @@ const ContactPage = () => {
               }}
             >
               <h3 className="font-bold text-brand-dark mb-4 flex items-center gap-2">
-                <i className="ri-time-line text-brand-accent" /> Office Hours
+                <i className="ri-time-line text-brand-accent" /> Office months
               </h3>
               <div className="space-y-2 text-sm text-slate-600">
                 <div className="flex justify-between">

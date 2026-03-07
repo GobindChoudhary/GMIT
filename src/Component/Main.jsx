@@ -61,12 +61,14 @@ const Main = () => {
           >
             {/* Badge */}
             <motion.div
-              className="flex items-center gap-2 mb-7"
+              className="flex items-center gap-2 mt-20 lg:mt-0 mb-7 "
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <span className="inline-flex items-center gap-2 bg-brand-dark/8 border border-brand-dark/15 text-brand-dark text-xs font-bold tracking-[0.2em] uppercase px-4 py-2 rounded-full">
+              <span className="inline-flex items-center gap-2 bg-brand-dark/8 border border-brand-dark/15 text-brand-dark text-xs font-bold tracking-[0.1em] lg:tracking-[0.2em] uppercase px-4 py-2 rounded-full
+             
+              ">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
                 Training{" "}
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>{" "}

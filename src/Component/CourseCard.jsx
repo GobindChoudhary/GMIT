@@ -4,7 +4,7 @@ const CourseCard = ({
   image,
   title,
   description,
-  hours,
+  months,
   certified,
   mentorSupport,
   price,
@@ -31,14 +31,14 @@ const CourseCard = ({
 
         {/* Features */}
         <div className="grid grid-cols-2 gap-3 mb-4">
-          {/* Hours */}
+          {/* months */}
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-full bg-brand-accent/10 flex items-center justify-center">
               <i className="ri-time-line text-brand-accent"></i>
             </div>
             <div>
-              <p className="text-sm font-semibold text-gray-900">{hours}</p>
-              <p className="text-xs text-gray-500">Hours</p>
+              <p className="text-sm font-semibold text-gray-900">{months}</p>
+              <p className="text-xs text-gray-500">months</p>
             </div>
           </div>
 
@@ -78,7 +78,7 @@ const CourseCard = ({
                 image,
                 title,
                 description,
-                hours,
+                months,
                 certified,
                 mentorSupport,
                 price,
