@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.svg";
+import { erpCourses, companyLinks, socialLinks } from "../data/footer";
 
 /**
  * Footer Component - Site footer with navigation and contact info
@@ -14,34 +15,6 @@ import logo from "../assets/logo.svg";
  * Design: Dark theme footer using brand color #003462
  */
 const Footer = () => {
-  // ERP course links
-  const erpCourses = [
-    { name: "S/4 HANA MM", href: "#" },
-    { name: "S/4 HANA SD", href: "#" },
-    { name: "S/4 HANA FICO", href: "#" },
-    { name: "S/4 HANA EWM", href: "#" },
-    { name: "S/4 HANA ABAP", href: "#" },
-    { name: "S/4 HANA TM", href: "#" },
-    { name: "ARIBA", href: "#" },
-    { name: "SALESFORCE", href: "#" },
-  ];
-
-  // Company navigation links
-  const companyLinks = [
-    { name: "Success Story", href: "#" },
-    { name: "Courses", href: "#" },
-    { name: "About", href: "#" },
-    { name: "Contact Us", href: "#" },
-  ];
-
-  // Social media links with icons
-  const socialLinks = [
-    { icon: "ri-facebook-fill", href: "#", color: "#1877f2" },
-    { icon: "ri-instagram-line", href: "#", color: "#e4405f" },
-    { icon: "ri-linkedin-fill", href: "#", color: "#0077b5" },
-    { icon: "ri-youtube-fill", href: "#", color: "#ff0000" },
-    { icon: "ri-whatsapp-line", href: "#", color: "#25d366" },
-  ];
 
   return (
     <footer className="bg-brand-dark pt-16 pb-8 px-6 lg:px-12">

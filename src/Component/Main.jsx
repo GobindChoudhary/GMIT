@@ -66,9 +66,7 @@ const Main = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <span className="inline-flex items-center gap-2 bg-brand-dark/8 border border-brand-dark/15 text-brand-dark text-xs font-bold tracking-[0.1em] lg:tracking-[0.2em] uppercase px-4 py-2 rounded-full
-             
-              ">
+              <span className="inline-flex items-center gap-1.5 sm:gap-2 bg-brand-dark/8 border border-brand-dark/15 text-brand-dark text-[10px] sm:text-xs font-bold tracking-[0.05em] sm:tracking-[0.1em] lg:tracking-[0.2em] uppercase px-3 sm:px-4 py-1.5 sm:py-2 rounded-full flex-wrap justify-center">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
                 Training{" "}
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>{" "}

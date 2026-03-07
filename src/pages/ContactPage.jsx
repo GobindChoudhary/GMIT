@@ -3,38 +3,24 @@ import { motion } from "framer-motion";
 import Lenis from "lenis";
 import NavBar from "../Component/NavBar";
 import Footer from "../Component/Footer";
+import { contactInfo, socials } from "../data/contact";
 
-const contactInfo = [
-  {
-    icon: "ri-map-pin-line",
-    title: "Visit Us",
-    lines: [
-      "No.412, C block, Amity Ramapriya Apartment,",
-      "Hosakerehalli, BSK 3rd Stage,",
-      "Bangalore - 560085",
-    ],
-  },
-  {
-    icon: "ri-mail-line",
-    title: "Email Us",
-    lines: ["support@gmit.com", "careers@gmit.com"],
-  },
-  {
-    icon: "ri-phone-line",
-    title: "Call Us",
-    lines: ["+91 63609 XXXXX", "Mon – Sat, 9 AM – 7 PM IST"],
-  },
-];
-
-const socials = [
-  { icon: "ri-facebook-fill", label: "Facebook" },
-  { icon: "ri-instagram-line", label: "Instagram" },
-  { icon: "ri-linkedin-fill", label: "LinkedIn" },
-  { icon: "ri-youtube-fill", label: "YouTube" },
-  { icon: "ri-whatsapp-line", label: "WhatsApp" },
-];
-
+/**
+ * Contact Us Page
+ * 
+ * Provides a contact form for users to send inquiries and displays
+ * company contact information, office hours, and social media links.
+ * 
+ * Features:
+ * - Controlled React form state (`formData`)
+ * - Simulated form submission success state
+ * - Smooth scrolling initialization via Lenis
+ * - Animated entrance sequences via Framer Motion
+ * 
+ * @returns {JSX.Element} The rendered contact page
+ */
 const ContactPage = () => {
+  // Controlled form state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -42,6 +28,8 @@ const ContactPage = () => {
     subject: "",
     message: "",
   });
+  
+  // Tracks if the form has been successfully submitted to show success message
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
@@ -139,7 +127,7 @@ const ContactPage = () => {
       </section>
 
       {/* ───── Form + Sidebar ───── */}
-      <section className="py-16 px-6 lg:px-12 relative overflow-hidden">
+      <section className="py-16 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.18] pointer-events-none"
           style={{
@@ -161,7 +149,7 @@ const ContactPage = () => {
             </h2>
             <p className="text-slate-500 mb-8">
               Fill out the form and our team will get back to you within 24
-              months.
+              hours.
             </p>
 
             {submitted ? (
@@ -328,7 +316,7 @@ const ContactPage = () => {
               </ul>
             </div>
 
-            {/* Office months */}
+            {/* Office Hours */}
             <div
               className="rounded-2xl border border-slate-100 p-6"
               style={{
@@ -336,7 +324,7 @@ const ContactPage = () => {
               }}
             >
               <h3 className="font-bold text-brand-dark mb-4 flex items-center gap-2">
-                <i className="ri-time-line text-brand-accent" /> Office months
+                <i className="ri-time-line text-brand-accent" /> Office Hours
               </h3>
               <div className="space-y-2 text-sm text-slate-600">
                 <div className="flex justify-between">
@@ -384,7 +372,7 @@ const ContactPage = () => {
       </section>
 
       {/* ───── Map / CTA ───── */}
-      <section className="bg-brand-dark py-16 px-6 lg:px-12">
+      <section className="bg-brand-dark py-16 px-4 sm:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

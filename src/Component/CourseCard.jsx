@@ -1,5 +1,21 @@
 import { useNavigate } from "react-router-dom";
 
+/**
+ * CourseCard Component
+ * 
+ * Displays a summary card for a single course. Typically used within grid layouts.
+ * 
+ * @param {Object} props - Component props
+ * @param {string} props.image - URL for the course thumbnail image
+ * @param {string} props.title - Full title of the course
+ * @param {string} props.description - Short summary of the course content
+ * @param {string} props.months - Duration of the course in months
+ * @param {boolean} props.certified - Whether the course includes a certification
+ * @param {boolean} props.mentorSupport - Whether the course includes 1-on-1 mentor support
+ * @param {string} props.price - Current discounted price (e.g., "₹24,999")
+ * @param {string} props.originalPrice - Original strikethrough price (e.g., "₹35,000")
+ * @returns {JSX.Element} A rendered course card
+ */
 const CourseCard = ({
   image,
   title,

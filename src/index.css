@@ -1,22 +1,28 @@
-/* Custom vertical scrollbar styling - light blue */
-body::-webkit-scrollbar {
-  width: 10px;
-  background: #f0f7fd;
+/* Custom vertical scrollbar styling - light sky blue */
+::-webkit-scrollbar {
+  width: 12px;
 }
-body::-webkit-scrollbar-thumb {
-  background: #b3e0fc;
-  border-radius: 8px;
-  border: 2px solid #f0f7fd;
+
+::-webkit-scrollbar-track {
+  background: #f0f9ff; /* Very light sky blue track */
 }
-body::-webkit-scrollbar-thumb:hover {
-  background: #7fd3fa;
+
+::-webkit-scrollbar-thumb {
+  background: #7dd3fc; /* Sky blue thumb */
+  border-radius: 6px;
+  border: 3px solid #f0f9ff; /* Creates a padded look */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8; /* Darker sky blue on hover */
 }
 
 /* For Firefox */
-body {
+html {
   scrollbar-width: thin;
-  scrollbar-color: #b3e0fc #f0f7fd;
+  scrollbar-color: #7dd3fc #f0f9ff;
 }
+
 /* Hide horizontal scrollbar and prevent horizontal overflow */
 html,
 body {
@@ -28,19 +34,23 @@ button,
 .cursor-pointer {
   cursor: pointer;
 }
+
 /* Pop-up animation for WhatsApp button */
 @keyframes popup {
   0% {
     transform: scale(0.5);
     opacity: 0;
   }
+
   60% {
     transform: scale(1.15);
     opacity: 1;
   }
+
   80% {
     transform: scale(0.95);
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -50,6 +60,7 @@ button,
 .animate-popup {
   animation: popup 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 @import "tailwindcss";
 
 /* ============================================
@@ -60,8 +71,10 @@ button,
    Opacity modifiers (e.g. /20, /[0.06]) work automatically.
    ============================================ */
 @theme {
-  --color-brand-dark: #003462; /* Deep navy — headers, CTAs, dark sections */
-  --color-brand-accent: #0097dc; /* Sky blue  — accents, highlights, hovers   */
+  --color-brand-dark: #003462;
+  /* Deep navy — headers, CTAs, dark sections */
+  --color-brand-accent: #0097dc;
+  /* Sky blue  — accents, highlights, hovers   */
 }
 
 /* ============================================
@@ -179,6 +192,7 @@ html.lenis body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -229,11 +243,9 @@ body {
 
 /* Premium gradient text utility */
 .gradient-text {
-  background: linear-gradient(
-    135deg,
-    var(--color-brand-dark) 0%,
-    var(--color-brand-accent) 100%
-  );
+  background: linear-gradient(135deg,
+      var(--color-brand-dark) 0%,
+      var(--color-brand-accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

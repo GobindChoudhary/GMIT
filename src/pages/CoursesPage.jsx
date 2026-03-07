@@ -4,127 +4,19 @@ import Lenis from "lenis";
 import NavBar from "../Component/NavBar";
 import Footer from "../Component/Footer";
 import CourseCard from "../Component/CourseCard";
+import { allCourses, categories } from "../data/courses";
 
-const allCourses = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1649180556628-9ba704115795?q=80&w=1162&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Python Programming Masterclass",
-    description:
-      "Start from basics and build real-world applications using Python.",
-    months: "6",
-    certified: "Yes",
-    mentorSupport: "24/7",
-    price: "3999",
-    originalPrice: "8999",
-    category: "Development",
-  },
-  // SAP Courses
-  {
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
-    title: "SAP S/4 HANA MM",
-    description:
-      "Master SAP Material Management module with real-time project experience.",
-    months: "6",
-    certified: "Yes",
-    mentorSupport: "24/7",
-    price: "8999",
-    originalPrice: "17999",
-    badge: "POPULAR",
-    category: "ERP",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800",
-    title: "SAP S/4 HANA FICO",
-    description:
-      "Learn financial accounting and controlling in SAP with hands-on projects.",
-    months: "6",
-    certified: "Yes",
-    mentorSupport: "24/7",
-    price: "8999",
-    originalPrice: "17999",
-    category: "ERP",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800",
-    title: "SAP S/4 HANA SD",
-    description:
-      "Become proficient in SAP Sales & Distribution with real business scenarios.",
-    months: "6",
-    certified: "Yes",
-    mentorSupport: "24/7",
-    price: "8999",
-    originalPrice: "17999",
-    category: "ERP",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=800",
-    title: "SAP ABAP Programming",
-    description:
-      "Learn SAP ABAP programming for custom development and integration.",
-    months: "6",
-    certified: "Yes",
-    mentorSupport: "24/7",
-    price: "8999",
-    originalPrice: "17999",
-    category: "ERP",
-  },
-  // Full Stack & BI
-  {
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800",
-    title: "Python Full Stack Development",
-    description:
-      "Comprehensive Python full stack course: Django, Flask, React, and more.",
-    months: "6",
-    certified: "Yes",
-    mentorSupport: "24/7",
-    price: "9999",
-    originalPrice: "19999",
-    badge: "NEW",
-    category: "Development",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=800",
-    title: "Java Full Stack Development",
-    description:
-      "Become a Java full stack developer: Spring Boot, Angular, REST APIs, and more.",
-    months: "6",
-    certified: "Yes",
-    mentorSupport: "24/7",
-    price: "9999",
-    originalPrice: "19999",
-    category: "Development",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800",
-    title: "Power BI for Business Analytics",
-    description:
-      "Master Power BI for data visualization, dashboards, and business intelligence.",
-    months: "6",
-    certified: "Yes",
-    mentorSupport: "24/7",
-    price: "7999",
-    originalPrice: "15999",
-    category: "Data & AI",
-  },
-  // Data Science 6 Months
-  {
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-    title: "Data Science 6 Months (4+2)",
-    description:
-      "Intensive 6-month data science program: 4 months core + 2 months specialization.",
-    months: "6",
-    certified: "Yes",
-    mentorSupport: "24/7",
-    price: "14999",
-    originalPrice: "29999",
-    badge: "FLAGSHIP",
-    category: "Data & AI",
-  },
-];
-
-const categories = ["All", "Development", "Data & AI", "ERP", "Security"];
-
+/**
+ * Courses Page
+ * 
+ * Displays the full catalog of courses offered.
+ * Features:
+ * - Category filtering (All, Development, Data & AI, etc.)
+ * - Smooth scrolling via Lenis
+ * - Animated grid layout using Framer Motion
+ * 
+ * @returns {JSX.Element} The rendered courses page
+ */
 const CoursesPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -194,11 +86,10 @@ const CoursesPage = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-                activeCategory === cat
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeCategory === cat
                   ? "bg-brand-accent text-white shadow-lg shadow-brand-accent/20"
                   : "bg-white text-slate-600 border border-slate-200 hover:border-brand-accent/40 hover:text-brand-accent"
-              }`}
+                }`}
             >
               {cat}
             </button>

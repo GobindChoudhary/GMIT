@@ -1,5 +1,15 @@
 import React, { useState } from "react";
 
+/**
+ * Login/Register Modal Component
+ * 
+ * A popup overlay for user authentication. Toggles between Login and Register states.
+ * 
+ * @param {Object} props
+ * @param {boolean} props.open - Whether the modal is currently visible
+ * @param {Function} props.onClose - Function to call when the modal backfrop or close button is clicked
+ * @returns {JSX.Element|null} The rendered modal or null if not open
+ */
 const LoginModal = ({ open, onClose }) => {
   const [isRegister, setIsRegister] = useState(false);
 

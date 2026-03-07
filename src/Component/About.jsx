@@ -2,33 +2,18 @@ import React from "react";
 import { motion } from "framer-motion";
 import msmeLogo from "../assets/msmeLogo.png";
 import founderImg from "../assets/founder.png";
+import { stats, pillars } from "../data/about";
 
+/**
+ * About Section Component (Homepage)
+ * 
+ * Displays a summarized "About Us" section intended for the homepage or landing pages.
+ * Features animated statistics and core pillars using Framer Motion.
+ * Data is populated from `src/data/about.js`.
+ * 
+ * @returns {JSX.Element} The rendered About section
+ */
 const About = () => {
-  const stats = [
-    { value: "2020", label: "Est. Year" },
-    { value: "1M+", label: "Students" },
-    { value: "100+", label: "Companies" },
-    { value: "100%", label: "Online" },
-  ];
-
-  const pillars = [
-    {
-      icon: "ri-rocket-2-line",
-      title: "Our Mission",
-      body: "GMIT is your gateway to the digital economy — empowering professionals worldwide with cutting-edge skills to excel in today's fast-paced business environment.",
-    },
-    {
-      icon: "ri-medal-line",
-      title: "Excellence First",
-      body: "We continuously update our curriculum to reflect the latest industry trends, ensuring every graduate is an in-demand professional ready for tomorrow's challenges.",
-    },
-    {
-      icon: "ri-community-line",
-      title: "Thriving Community",
-      body: "Join over a million learners who've transformed their careers with GMIT — whether advancing in your role or pivoting to a new field entirely.",
-    },
-  ];
-
   return (
     <section className="py-20 md:py-28 px-6 lg:px-12 bg-white relative overflow-hidden">
       <div

@@ -1,109 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation, useNavigate } from "react-router-dom";
+import Lenis from "lenis";
 import NavBar from "../Component/NavBar";
 import Footer from "../Component/Footer";
-import ScrollToTop from "../Component/ScrollToTop.jsx";
+import { defaultCourse, courseExtras, defaultExtras } from "../data/courses";
 
-/* ─── Fallback course data if navigated directly ─── */
-const defaultCourse = {
-  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-  title: "Data Science & Analytics with Gen AI",
-  description:
-    "Gain hands-on experience in data analysis, visualization, and AI integration.",
-  months: "115+",
-  certified: "Yes",
-  mentorSupport: "24/7",
-  price: "6999",
-  originalPrice: "14891",
-};
-
-/* ─── Extended details per course (keyed by title) ─── */
-const courseExtras = {
-  "Data Science & Analytics with Gen AI": {
-    whatYouLearn: [
-      "Python for data analysis and automation",
-      "Statistical methods and hypothesis testing",
-      "Data visualization with Matplotlib & Seaborn",
-      "Machine Learning with scikit-learn",
-      "Deep Learning fundamentals with TensorFlow",
-      "Generative AI concepts and prompt engineering",
-      "Real-world data cleaning and preprocessing",
-      "Building end-to-end ML pipelines",
-    ],
-    includes: [
-      { icon: "ri-play-circle-line", text: "115+ months on-demand video" },
-      { icon: "ri-download-line", text: "45 downloadable resources" },
-      { icon: "ri-global-line", text: "Access on website & app" },
-      { icon: "ri-medal-line", text: "Certificate of completion" },
-    ],
-    highlights: [
-      { icon: "ri-bar-chart-2-line", label: "Beginner", desc: "Level" },
-      { icon: "ri-calendar-line", label: "20 Weeks", desc: "Duration" },
-      { icon: "ri-live-line", label: "Live", desc: "Workshops" },
-      { icon: "ri-user-heart-line", label: "1 on 1", desc: "Mentorship" },
-    ],
-  },
-  "Full Stack Web Development (MERN)": {
-    whatYouLearn: [
-      "HTML, CSS, and modern JavaScript (ES6+)",
-      "React.js with hooks and state management",
-      "Node.js and Express.js server development",
-      "MongoDB database design and CRUD operations",
-      "RESTful API design and authentication",
-      "Deployment with cloud platforms",
-      "Git version control and collaboration",
-      "Building complete full-stack projects",
-    ],
-    includes: [
-      { icon: "ri-play-circle-line", text: "120+ months on-demand video" },
-      { icon: "ri-download-line", text: "50 downloadable resources" },
-      { icon: "ri-global-line", text: "Access on website & app" },
-      { icon: "ri-medal-line", text: "Certificate of completion" },
-    ],
-    highlights: [
-      { icon: "ri-bar-chart-2-line", label: "Beginner", desc: "Level" },
-      { icon: "ri-calendar-line", label: "24 Weeks", desc: "Duration" },
-      { icon: "ri-live-line", label: "Live", desc: "Workshops" },
-      { icon: "ri-user-heart-line", label: "1 on 1", desc: "Mentorship" },
-    ],
-  },
-};
-
-/* ─── Fallback extras for unlisted courses ─── */
-const defaultExtras = {
-  whatYouLearn: [
-    "Core concepts and foundational theory",
-    "Hands-on projects with real-world scenarios",
-    "Industry best practices and workflows",
-    "Tools and frameworks used by professionals",
-    "Problem-solving and debugging techniques",
-    "Portfolio-ready capstone project",
-  ],
-  includes: [
-    { icon: "ri-play-circle-line", text: "100+ months on-demand video" },
-    { icon: "ri-download-line", text: "30+ downloadable resources" },
-    { icon: "ri-global-line", text: "Access on website & app" },
-    { icon: "ri-medal-line", text: "Certificate of completion" },
-  ],
-  highlights: [
-    { icon: "ri-bar-chart-2-line", label: "Beginner", desc: "Level" },
-    { icon: "ri-calendar-line", label: "16 Weeks", desc: "Duration" },
-    { icon: "ri-live-line", label: "Live", desc: "Workshops" },
-    { icon: "ri-user-heart-line", label: "1 on 1", desc: "Mentorship" },
-  ],
-};
-
+/**
+ * Course Detail Page
+ * 
+ * Displays comprehensive information about a specific course, including:
+ * - Hero section with course overview and enrollment CTA
+ * - Detailed curriculum (What you'll learn)
+ * - Key highlights (Duration, Level, format)
+ * - Included resources (Video hours, certificates)
+ * - Frequently Asked Questions accordion
+ * 
+ * Uses `framer-motion` for page transition animations and UI interactions.
+ * Expects course data to be passed via React Router navigation state,
+ * otherwise falls back to `defaultCourse`.
+ * 
+ * @returns {JSX.Element} The rendered course detail page
+ */
 export const courseDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  
+  // Retrieve course data from navigation state, or fallback to default
   const course = location.state || defaultCourse;
   const extras = courseExtras[course.title] || defaultExtras;
+  
+  // State for FAQ accordion toggle (-1 means all closed)
   const [openFaq, setOpenFaq] = useState(-1);
+
+  // Force scroll to top immediately on mount (before Lenis takes over)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [location.key]);
+
+  // Initialize Lenis smooth scrolling
+  useEffect(() => {
+    const lenis = new Lenis({ duration: 1.5, smooth: true });
+    // After Lenis initializes, also tell it to go to top
+    requestAnimationFrame(() => {
+      lenis.scrollTo(0, { immediate: true });
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+    return () => lenis.destroy();
+  }, [location.key]);
 
   return (
     <>
-     
+
       <div className="bg-white min-h-screen">
         <NavBar />
 
@@ -141,14 +95,14 @@ export const courseDetail = () => {
                   {course.description}
                 </p>
 
-                <div className="flex flex-wrap gap-4">
-                  <button className="bg-brand-accent hover:bg-brand-accent/85 text-white px-8 py-3.5 rounded-xl font-semibold transition-colors shadow-lg shadow-brand-accent/20 flex items-center gap-2">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="bg-brand-accent w-full sm:w-auto hover:bg-brand-accent/85 text-white px-8 py-3.5 rounded-xl font-semibold transition-colors shadow-lg shadow-brand-accent/20 flex justify-center items-center gap-2">
                     Enroll Now <i className="ri-arrow-right-line" />
                   </button>
                   <a
                     href="/GMIT-logo-final.pdf"
                     download
-                    className="border border-slate-500 hover:border-white text-white px-8 py-3.5 rounded-xl font-semibold transition-colors flex items-center gap-2 cursor-pointer"
+                    className="border border-slate-500 w-full sm:w-auto hover:border-white text-white px-8 py-3.5 rounded-xl font-semibold transition-colors flex justify-center items-center gap-2 cursor-pointer"
                   >
                     Download Brochure <i className="ri-file-download-line" />
                   </a>

@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from "react";
-import LoginModal from "./LoginModal.jsx";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import LoginModal from "./LoginModal.jsx";
 import logo from "../assets/logo.svg";
+import { navMenu as NavMenu } from "../data/navigation";
 
 /**
  * NavBar Component - Main navigation header
  *
  * Features:
- * - Sticky header with clean white background
- * - Responsive: Desktop centered nav, Mobile slide-out menu
- * - Brand colors: #003563 (dark), #0097dc (accent)
- * - Hides on scroll down, shows on scroll up
+ * - Sticky header with clean transclucent background
+ * - Responsive: Desktop centered nav, Mobile slide-out hamburger menu
+ * - Intelligent scrolling: Hides on scroll down to save space, shows on scroll up
+ * 
+ * @returns {JSX.Element} The rendered navigation bar
  */
 const NavBar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+
+  // --- Component State ---
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Mobile menu drawer state
+  const [isVisible, setIsVisible] = useState(true);    // Controls hiding/showing nav on scroll
+  const [lastScrollY, setLastScrollY] = useState(0);   // Tracks previous scroll position
+  const [isScrolled, setIsScrolled] = useState(false); // Tracks if user has scrolled past top
+  const [showLogin, setShowLogin] = useState(false);   // Login Modal visibility state
 
   const openSideMenu = () => setIsMenuOpen(true);
   const closeSideMenu = () => setIsMenuOpen(false);
-  const [showLogin, setShowLogin] = useState(false);
 
   // Listen for custom event to open login modal from anywhere
   useEffect(() => {
@@ -29,15 +34,6 @@ const NavBar = () => {
     window.addEventListener("open-login-modal", handler);
     return () => window.removeEventListener("open-login-modal", handler);
   }, []);
-
-  // Navigation menu items
-  const NavMenu = [
-    { label: "Home", path: "/" },
-    { label: "Courses", path: "/courses" },
-    { label: "Success", path: "/success" },
-    { label: "About Us", path: "/about-us" },
-    { label: "Contact", path: "/contact" },
-  ];
 
   // Handle scroll to show/hide navbar
   useEffect(() => {
@@ -70,9 +66,8 @@ const NavBar = () => {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 ${
-        isScrolled ? "shadow-md" : ""
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 ${isScrolled ? "shadow-md" : ""
+        }`}
       style={{
         background: isScrolled
           ? "linear-gradient(135deg, rgba(0, 151, 220, 0.05) 0%, rgba(0, 53, 99, 0.08) 100%), rgba(255, 255, 255, 0.9)"
